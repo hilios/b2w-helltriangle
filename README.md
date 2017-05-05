@@ -8,7 +8,7 @@ This software implements a solution strategy to the Hell Triangle game in Scala.
 
 Because it is a modern, elegant and very-fast programming language based on JVM, allowing easy integration with all legacy enterprise solutions writen in Java.
 
-Also, the language enables the use of immutable structures which makes software deterministic and functional programming style allowing to write complex operations in a linear and efficient manner.
+Also, the language enables the use of immutable structures, which add deterministic guarantees for software and functional programming style, allowing to write complex operations in a linear and efficient manner.
 
 ### Running
 
