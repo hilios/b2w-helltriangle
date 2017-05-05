@@ -4,12 +4,67 @@
 
 This software implements a solution strategy to the Hell Triangle game in Scala.
 
+**Why Scala?**
+
+Because it is a modern, elegant and very-fast programming language based on JVM, allowing easy integration with all legacy enterprise solutions writen in Java.
+
+Also, the language enables the use of immutable structures which makes software deterministic and functional programming style allowing to write complex operations in a linear and efficient manner.
+
 ### Running
 
-First you need to install the [SBT](http://www.scala-sbt.org/release/docs/Setup.html) to then run:
+First you need to install the [SBT](http://www.scala-sbt.org/release/docs/Setup.html), then execute on your shell and follow the instructions:
+
+```
+$ sbt console
+```
+
+At the Scala REPL just import the main class and pass a list of rows of the triangle as following: 
+
+```scala
+import b2w.helltriangle.HellTriangle
+
+val example = Seq(
+    Seq(6),
+    Seq(3, 5),
+    Seq(9, 7, 1),
+    Seq(4, 6, 8, 4)
+)
+// example: Seq[Seq[Int]] = List(List(6), List(3, 5), List(9, 7, 1), List(4, 6, 8, 4))
+
+HellTriangle(example).solve
+// res1: Seq[Int] = List(6, 5, 7, 8)
+```
+
+#### Iterative mode
+
+You can interact with the program through a simple command line application:
 
 ```shell
 $ sbt run
+    __         ____   __       _                   __
+   / /_  ___  / / /  / /______(_)___ _____  ____ _/ /__
+  / __ \/ _ \/ / /  / __/ ___/ / __ `/ __ \/ __ `/ / _ \
+ / / / /  __/ / /  / /_/ /  / / /_/ / / / / /_/ / /  __/
+/_/ /_/\___/_/_/   \__/_/  /_/\__,_/_/ /_/\__, /_/\___/
+                                         /____/
+
+Type the numbers to each one of triangle row separated by an space and hit ENTER.
+To see the solution type = (equal) and hit ENTER  or Q to exit.
+
+Row 1 > 6
+Row 2 > 3 5
+Row 3 > 9 7 1
+Row 4 > 4 6 8 4
+Row 5 > =
+
+   6
+  3 5
+ 9 7 1
+4 6 8 4
+
+Path: 6, 5, 7, 8
+Sum: 26
+
 ```
 
 #### Testing
