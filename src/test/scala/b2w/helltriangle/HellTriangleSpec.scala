@@ -20,6 +20,16 @@ class HellTriangleSpec extends FlatSpec with Matchers {
     )
     ht.toSeq.length shouldBe 10
   }
+
+  it should "throw an exception if the input is not a triangle like list of list" in {
+    an [IllegalArgumentException] should be thrownBy HellTriangle(Seq(
+      Seq(6),
+      Seq(9, 7, 1),
+      Seq(3, 5),
+      Seq(4, 6, 8, 4)
+    ))
+  }
+
   "#solve" should "return the correct path and sum" in {
     val ht = HellTriangle(Seq(
       Seq(6),
@@ -32,7 +42,7 @@ class HellTriangleSpec extends FlatSpec with Matchers {
     ht.solve.sum shouldBe 26
   }
 
-  it should "return the correct path and sum again" in {
+  it should "do it again" in {
     val ht = HellTriangle(Seq(
       Seq(5),
       Seq(1, 3),
@@ -43,5 +53,10 @@ class HellTriangleSpec extends FlatSpec with Matchers {
 
     ht.solve shouldBe Seq(5, 3, 10, 1, 15)
     ht.solve.sum shouldBe 34
+  }
+
+  it should "handle empty inputs" in {
+    val ht = HellTriangle(Seq.empty)
+    ht.solve shouldBe Seq.empty
   }
 }
